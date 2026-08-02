@@ -1,0 +1,40 @@
+buildscript {
+  ext {
+    spotless_version = '8.6.0'
+    spring_boot_version = '4.1.0'
+    uuid_creator_version = '6.0.0'
+    postgresql_jdbc_driver_version = '42.7.2'
+  }
+}
+
+plugins {
+  id 'com.diffplug.spotless' version "${spotless_version}"
+  id 'java'
+  id 'org.springframework.boot' version "${spring_boot_version}"
+}
+
+group = 'com.bukuwarung.dummybackend'
+version = '0.0.1'
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_21
+  targetCompatibility = JavaVersion.VERSION_21
+}
+
+spotless {
+  java {
+    googleJavaFormat()
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation "org.springframework.boot:spring-boot-starter-web:${spring_boot_version}"
+  implementation "org.springframework.boot:spring-boot-starter-data-jpa:${spring_boot_version}"
+  implementation "org.springframework.boot:spring-boot-starter-validation:${spring_boot_version}"
+  implementation "com.github.f4b6a3:uuid-creator:${uuid_creator_version}"
+  implementation "org.postgresql:postgresql:${postgresql_jdbc_driver_version}"
+}
