@@ -4,9 +4,7 @@ import com.bukuwarung.dummybackend.domain.dtos.ProductDTO;
 import com.bukuwarung.dummybackend.repositories.ProductRepository;
 import com.bukuwarung.dummybackend.utils.MapperUtil;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
-@Service
 public class FilterProductUseCase {
 
   private final ProductRepository productRepository;

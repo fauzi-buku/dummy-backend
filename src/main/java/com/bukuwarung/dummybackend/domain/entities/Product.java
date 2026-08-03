@@ -1,6 +1,5 @@
 package com.bukuwarung.dummybackend.domain.entities;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
@@ -9,9 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 public class Product extends BaseEntity {
 
-  @Column(name = "name", nullable = false)
-  @NotBlank
-  private String name;
+  @NotBlank private String name;
 
   public String getName() {
     return name;
